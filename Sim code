@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+‎<html lang="en">
+‎<head>
+‎  <meta charset="UTF-8">
+‎  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+‎  <title>Community Questionnaire</title>
+‎  <style>
+‎    body {
+‎      font-family: Arial, sans-serif;
+‎      background: #f4f6f9;
+‎      margin: 0;
+‎      padding: 20px;
+‎    }
+‎    h2 {
+‎      color: #333;
+‎    }
+‎    form {
+‎      background: #fff;
+‎      padding: 20px;
+‎      border-radius: 8px;
+‎      max-width: 600px;
+‎      margin: auto;
+‎      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+‎    }
+‎    label {
+‎      display: block;
+‎      margin-top: 15px;
+‎      font-weight: bold;
+‎    }
+‎    input, select, textarea {
+‎      width: 100%;
+‎      padding: 8px;
+‎      margin-top: 5px;
+‎      border: 1px solid #ccc;
+‎      border-radius: 4px;
+‎    }
+‎    .section {
+‎      display: none;
+‎      margin-top: 20px;
+‎    }
+‎    button {
+‎      margin-top: 20px;
+‎      padding: 10px 15px;
+‎      background: #0078d7;
+‎      color: #fff;
+‎      border: none;
+‎      border-radius: 4px;
+‎      cursor: pointer;
+‎    }
+‎    button:hover {
+‎      background: #005fa3;
+‎    }
+‎  </style>
+‎</head>
+‎<body>
+‎  <h2>Community Questionnaire</h2>
+‎  <form id="questionnaireForm">
+‎    <!-- General Information -->
+‎    <label for="name">Name (optional)</label>
+‎    <input type="text" id="name" name="name">
+‎
+‎    <label for="role">Role</label>
+‎    <select id="role" name="role" required>
+‎      <option value="">-- Select your role --</option>
+‎      <option value="student">Student</option>
+‎      <option value="staff">Staff</option>
+‎      <option value="landlord">Landlord</option>
+‎    </select>
+‎
+‎    <!-- Student Section -->
+‎    <div id="studentSection" class="section">
+‎      <label>Housing Satisfaction</label>
+‎      <textarea name="housing_satisfaction"></textarea>
+‎
+‎      <label>Academic Support</label>
+‎      <textarea name="academic_support"></textarea>
+‎
+‎      <label>Community Engagement</label>
+‎      <textarea name="community_engagement"></textarea>
+‎
+‎      <label>Challenges Faced</label>
+‎      <textarea name="student_challenges"></textarea>
+‎    </div>
+‎
+‎    <!-- Staff Section -->
+‎    <div id="staffSection" class="section">
+‎      <label>Work Environment</label>
+‎      <textarea name="work_environment"></textarea>
+‎
+‎      <label>Student Interaction</label>
+‎      <textarea name="student_interaction"></textarea>
+‎
+‎      <label>Professional Development</label>
+‎      <textarea name="professional_development"></textarea>
+‎
+‎      <label>Suggestions</label>
+‎      <textarea name="staff_suggestions"></textarea>
+‎    </div>
+‎
+‎    <!-- Landlord Section -->
+‎    <div id="landlordSection" class="section">
+‎      <label>Tenant Relationship</label>
+‎      <textarea name="tenant_relationship"></textarea>
+‎
+‎      <label>Property Maintenance</label>
+‎      <textarea name="property_maintenance"></textarea>
+‎
+‎      <label>Rental Challenges</label>
+‎      <textarea name="rental_challenges"></textarea>
+‎
+‎      <label>Collaboration with University</label>
+‎      <textarea name="landlord_collaboration"></textarea>
+‎    </div>
+‎
+‎    <!-- Open Feedback -->
+‎    <div id="feedbackSection" class="section">
+‎      <label>Community Improvements</label>
+‎      <textarea name="community_improvements"></textarea>
+‎
+‎      <label>Additional Comments</label>
+‎      <textarea name="additional_comments"></textarea>
+‎    </div>
+‎
+‎    <button type="submit">Submit</button>
+‎  </form>
+‎
+‎  <script>
+‎    const roleSelect = document.getElementById('role');
+‎    const studentSection = document.getElementById('studentSection');
+‎    const staffSection = document.getElementById('staffSection');
+‎    const landlordSection = document.getElementById('landlordSection');
+‎    const feedbackSection = document.getElementById('feedbackSection');
+‎
+‎    roleSelect.addEventListener('change', function() {
+‎      studentSection.style.display = 'none';
+‎      staffSection.style.display = 'none';
+‎      landlordSection.style.display = 'none';
+‎      feedbackSection.style.display = 'block';
+‎
+‎      if (this.value === 'student') {
+‎        studentSection.style.display = 'block';
+‎      } else if (this.value === 'staff') {
+‎        staffSection.style.display = 'block';
+‎      } else if (this.value === 'landlord') {
+‎        landlordSection.style.display = 'block';
+‎      }
+‎    });
+‎
+‎    document.getElementById('questionnaireForm').addEventListener('submit', function(e) {
+‎      e.preventDefault();
+‎      alert('Thank you for completing the questionnaire!');
+‎    });
+‎  </script>
+‎</body>
+‎</html>
+‎
